@@ -23,14 +23,14 @@ jobs:
     strategy:
       matrix:
         NXF_VER:
-          - "23.04.0"
-          - "latest-everything"
+          - "24.04.2"
+      #    - "latest-everything" #commenting this out for testing
     steps:
       - name: Check out pipeline code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
 
       - name: Install Nextflow
-        uses: nf-core/setup-nextflow@v1
+        uses: nf-core/setup-nextflow@v2
         with:
           version: "${{ matrix.NXF_VER }}"
 
